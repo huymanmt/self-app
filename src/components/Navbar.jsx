@@ -33,8 +33,8 @@ export default function Navbar() {
 
         <nav className="site-nav">
           <Link
-            to="/about"
-            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+            to="/"
+            className={`nav-link ${location.pathname === '/' || location.pathname === '/about' ? 'active' : ''}`}
           >
             About
           </Link>

@@ -430,14 +430,22 @@ a:hover {
   letter-spacing: -0.015em;
 }
 
-.rst-body h2 {
-  font-size: 1.4rem;
+.rst-body h1 {
+  font-size: 1.35rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.35rem;
+  margin-top: 2.25rem;
+}
+
+.rst-body h2 {
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  color: var(--accent);
 }
 
 .rst-body h3 {
-  font-size: 1.18rem;
+  font-size: 1.02rem;
+  margin-top: 1rem;
 }
 
 .rst-body p {
