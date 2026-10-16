@@ -130,7 +130,7 @@ export default function Blog() {
             type="search"
             value={query}
             onChange={handleSearchChange}
-            placeholder="Search articles by title, topic, or keyword... (Alt + /)"
+            placeholder="Search articles by title, topic, or keyword..."
             aria-label="Search articles"
             autoComplete="off"
             style={{
