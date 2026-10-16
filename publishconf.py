@@ -9,8 +9,8 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-# Production site URL (defaults to Firebase Hosting domain, overridable via env var)
-SITEURL = os.environ.get('SITE_URL', 'https://your-firebase-project.web.app')
+# Production site URL for Firebase Hosting
+SITEURL = os.environ.get('SITE_URL', 'https://huymanmt-a8fde.web.app')
 RELATIVE_URLS = False
 
 # Enable production feeds & sitemaps
