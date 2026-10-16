@@ -37,7 +37,7 @@ Mismart Smart Technology
 Skills
 ======
 
-* **Containers & Orchestration:** Kubernetes (K8s), Docker, Red Hat OpenShift, GitHub ARC
+* **Containers & Orchestration:** Kubernetes (K8s), Docker, Red Hat OpenShift
 * **CI/CD & GitOps:** GitHub Actions, ArgoCD, Jenkins, Azure DevOps Pipelines
 * **Infrastructure as Code:** Terraform, Ansible
 * **Cloud Platforms:** Google Cloud (GCP), Microsoft Azure, Amazon Web Services (AWS)
@@ -51,12 +51,13 @@ Skills
 Certifications
 ==============
 
-* **Certified Kubernetes Security Specialist (CKS)** — CNCF
-* **Certified Kubernetes Administrator (CKA)** — CNCF
-* **Certified Kubernetes Application Developer (CKAD)** — CNCF
-* **Google Cloud Certified — Professional Cloud Architect** — GCP
-* **Google Cloud Certified — Professional Cloud DevOps Engineer** — GCP
-* **AWS Certified AI Practitioner** — AWS
+* `Certified Kubernetes Security Specialist (CKS) <https://www.credly.com/badges/622c4b3b-d246-48a9-87ee-876eeb36c4a6>`_ - CNCF
+* `Certified Kubernetes Administrator (CKA) <https://www.credly.com/badges/ac865a32-4036-4c10-972c-2b274b39cf5c>`_ - CNCF
+* `Certified Kubernetes Application Developer (CKAD) <https://www.credly.com/badges/31f4e8d9-3160-4973-b711-b4e701a43588>`_ - CNCF
+* `Google Cloud Certified - Professional Cloud Architect <https://www.credly.com/badges/ede60fda-1734-417e-ab43-96e9d0a698ff>`_ - GCP
+* `Google Cloud Certified - Professional Cloud DevOps Engineer <https://www.credly.com/badges/d05512c9-2ae0-4b2b-8f6b-1c246b747013>`_ - GCP
+* `AWS Certified AI Practitioner <https://www.credly.com/badges/622c4b3b-d246-48a9-87ee-876eeb36c4a6>`_ - AWS
+* `Microsoft Certified: Azure Data Fundamentals <https://www.credly.com/badges/6aee13f4-f3d7-4348-bfdf-2d6b51e72b66>`_ - Microsoft
 
 ----
 

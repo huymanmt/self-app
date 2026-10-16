@@ -12,12 +12,19 @@ export default function BlogPost() {
     if (!contentRef.current) return;
     const blocks = contentRef.current.querySelectorAll('pre, .highlight pre, pre.literal-block');
     blocks.forEach((block) => {
-      if (block.querySelector('.copy-btn')) return;
+      if (block.parentElement?.classList.contains('code-block-wrapper')) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'code-block-wrapper';
+      block.parentNode.insertBefore(wrapper, block);
+      wrapper.appendChild(block);
+
       const btn = document.createElement('button');
       btn.className = 'copy-btn';
       btn.innerText = 'Copy';
+      btn.setAttribute('aria-label', 'Copy code to clipboard');
       btn.onclick = async () => {
-        const text = block.innerText.replace(/^Copy\s+/, '');
+        const text = block.innerText.trim();
         await navigator.clipboard.writeText(text);
         btn.innerText = 'Copied!';
         btn.classList.add('copied');
@@ -26,8 +33,8 @@ export default function BlogPost() {
           btn.classList.remove('copied');
         }, 2000);
       };
-      block.style.position = 'relative';
-      block.appendChild(btn);
+
+      wrapper.appendChild(btn);
     });
   }, [post]);
 
