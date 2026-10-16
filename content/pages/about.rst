@@ -12,11 +12,11 @@ About
 
    **Nguyen Huynh Huy Man** (`@huymanmt <https://github.com/huymanmt>`_) is a **DevOps & Cloud Platform Engineer** based in Ho Chi Minh City, Viet Nam.
    
-   With 3+ years of engineering experience, he specializes in building automated infrastructure, scaling multi-tenant Kubernetes clusters, designing GitOps pipelines with ArgoCD & GitHub ARC, and deploying enterprise AI infrastructure (LiteLLM, Langfuse, OpenBao).
+   With 3+ years of engineering experience, I specialize in building automated infrastructure, scaling multi-tenant Kubernetes clusters, designing GitOps pipelines with ArgoCD & GitHub ARC, and deploying enterprise AI infrastructure (LiteLLM, Langfuse, OpenBao).
 
 .. container:: quick-links-bar
 
-   * 📄 `Download Official Resume (PDF) <{static}/resume.pdf>`_
+   * 📍 Location: Ho Chi Minh City, Viet Nam
    * 🐙 GitHub: `github.com/huymanmt <https://github.com/huymanmt>`_
    * 💼 LinkedIn: `linkedin.com/in/mannguyen99 <https://linkedin.com/in/mannguyen99>`_
    * ✉️ Email: `man28081999@gmail.com <mailto:man28081999@gmail.com>`_
@@ -50,7 +50,7 @@ Navigos Group Viet Nam
 ----------------------
 *DevOps Engineer* | **Oct 2022 – Dec 2022**
 
-* Automated deployment pipelines and managed cloud infrastructure stability for staging and production web environments.
+* Automated deployment pipelines and managed on-premise infrastructure stability for staging and production web environments.
 
 Mismart Smart Technology
 ------------------------

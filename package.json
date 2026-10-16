@@ -1,0 +1,26 @@
+{
+  "name": "huymanmt-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "DevOps & Cloud Platform Engineer Portfolio and Technical Blog for huymanmt",
+  "scripts": {
+    "compile-content": "node scripts/compile-content.js",
+    "predev": "node scripts/compile-content.js",
+    "dev": "vite",
+    "prebuild": "node scripts/compile-content.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.57.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "rst-compiler": "^0.5.9",
+    "vite": "^8.3.4"
+  }
+}

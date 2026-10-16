@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#avatarGrad)" stroke="#38bdf8" stroke-width="4"/>
+  <!-- Head Silhouette -->
+  <circle cx="100" cy="78" r="38" fill="#f8fafc"/>
+  <!-- Glasses / Modern dev look -->
+  <rect x="74" y="70" width="22" height="15" rx="3" fill="#1e293b"/>
+  <rect x="104" y="70" width="22" height="15" rx="3" fill="#1e293b"/>
+  <line x1="96" y1="76" x2="104" y2="76" stroke="#1e293b" stroke-width="3"/>
+  <!-- Shoulder / Body -->
+  <path d="M42 165 C48 126, 75 120, 100 120 C125 120, 152 126, 158 165 Z" fill="url(#bodyGrad)"/>
+  <!-- Tech icon badge: Terminal / K8s -->
+  <circle cx="152" cy="152" r="24" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+  <path d="M144 145 L150 152 L144 159 M152 160 L160 160" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

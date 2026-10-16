@@ -1,9 +1,17 @@
-# Virtual environment
+# Ignore all PDF CV / resume files
+*.pdf
+*.pdf:*
+
+# Node dependencies & build artifacts
+node_modules/
+dist/
+
+# Python Virtual environment (legacy/optional)
 .venv/
 venv/
 ENV/
 
-# Pelican build artifacts
+# Build artifacts
 output/
 cache/
 __pycache__/
