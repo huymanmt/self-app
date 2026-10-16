@@ -1,14 +1,15 @@
 """
-Pelican Development Configuration
-Nguyen Huynh Huy Man - DevOps Engineer & Cloud Architect
-Portfolio & Technical Blog
+Pelican Configuration - Simple & Minimalist Developer Portfolio
+Huy Man (@huymanmt) - DevOps Engineer & Cloud Platform Architect
 """
 from datetime import datetime
 
-AUTHOR = 'Nguyen Huynh Huy Man'
-SITENAME = 'Nguyen Huynh Huy Man'
-SITETITLE = 'Nguyen Huynh Huy Man | DevOps Engineer & Cloud Architect'
-SITESUBTITLE = 'DevOps Engineer • Cloud Architect • CKS • CKA • GCP PCA'
+AUTHOR = 'Huy Man (@huymanmt)'
+FULL_NAME = 'Nguyen Huynh Huy Man'
+ALIAS = 'huymanmt'
+SITENAME = 'huymanmt'
+SITETITLE = 'huymanmt • DevOps & Cloud Platform'
+SITESUBTITLE = 'DevOps & Cloud Platform Engineer'
 SITEURL = ''
 
 PATH = 'content'
@@ -19,7 +20,7 @@ CURRENT_YEAR = datetime.now().year
 # Theme configuration
 THEME = 'themes/developer'
 
-# Feed generation is disabled during local development
+# Feed settings (disabled in development)
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -55,7 +56,7 @@ AUTHORS_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 
 # Pagination
-DEFAULT_PAGINATION = 6
+DEFAULT_PAGINATION = 10
 
 # Relative URLs for local preview
 RELATIVE_URLS = True
@@ -67,11 +68,10 @@ DOCUTILS_SETTINGS = {
     'initial_header_level': '2',
 }
 
-# Author profile & hero
+# Author profile & bio
 BIO = (
-    "DevOps Engineer with 3+ years of experience in automating infrastructure, "
-    "optimizing CI/CD pipelines, and guaranteeing system reliability. "
-    "Specialized in Kubernetes, GitOps (ArgoCD/ARC), Terraform, Azure, GCP, and enterprise AI workflows."
+    "DevOps Engineer with 3+ years of experience building resilient cloud infrastructure, "
+    "automating GitOps CI/CD pipelines, and orchestrating enterprise Kubernetes and AI workflows."
 )
 LOCATION = 'Ho Chi Minh City, Viet Nam'
 EMAIL = 'man28081999@gmail.com'
@@ -80,23 +80,22 @@ AVATAR = 'images/avatar.svg'
 RESUME_URL = '/resume.pdf'
 
 CERTIFICATIONS = [
-    'Certified Kubernetes Security Specialist (CKS)',
-    'Certified Kubernetes Administrator (CKA)',
-    'Certified Kubernetes Application Developer (CKAD)',
-    'Google Cloud Certified - Professional Cloud Architect',
-    'Google Cloud Certified - Professional Cloud DevOps Engineer',
+    'CKS (Security Specialist)',
+    'CKA (Administrator)',
+    'CKAD (Application Developer)',
+    'GCP Professional Cloud Architect',
+    'GCP Professional Cloud DevOps',
     'AWS Certified AI Practitioner',
 ]
 
 SOCIAL_LINKS = [
-    {'name': 'LinkedIn', 'url': 'https://linkedin.com/in/mannguyen99', 'icon': 'linkedin'},
-    {'name': 'GitHub', 'url': 'https://github.com', 'icon': 'github'},
-    {'name': 'Email', 'url': 'mailto:man28081999@gmail.com', 'icon': 'email'},
+    {'name': 'GitHub', 'url': 'https://github.com/huymanmt', 'handle': '@huymanmt'},
+    {'name': 'LinkedIn', 'url': 'https://linkedin.com/in/mannguyen99', 'handle': 'mannguyen99'},
+    {'name': 'Email', 'url': 'mailto:man28081999@gmail.com', 'handle': 'man28081999@gmail.com'},
 ]
 
 NAV_ITEMS = [
-    {'title': 'Home', 'url': '/index.html'},
-    {'title': 'About Me', 'url': '/about.html'},
+    {'title': 'About', 'url': '/about.html'},
     {'title': 'Blog', 'url': '/archives.html'},
-    {'title': 'Tags', 'url': '/tags.html'},
+    {'title': 'Resume', 'url': '/resume.pdf', 'external': True},
 ]

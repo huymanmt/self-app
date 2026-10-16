@@ -1,100 +1,61 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Developer Hero Section -->
-<section class="hero-section">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <div class="badge-status">
-        <span class="status-indicator"></span> Available for Cloud &amp; DevOps Engineering
-      </div>
-      <h1 class="hero-title">Hi, I'm <span class="gradient-text">{{ AUTHOR }}</span></h1>
-      <p class="hero-subtitle">{{ SITESUBTITLE }}</p>
-      <p class="hero-description">{{ BIO }}</p>
-      
-      <div class="hero-actions">
-        <a href="{{ SITEURL }}/about.html" class="btn btn-primary">Read About Me</a>
-        <a href="{{ SITEURL }}/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume (PDF)</a>
-        <a href="{{ SITEURL }}/archives.html" class="btn btn-ghost">View All Posts &rarr;</a>
-      </div>
+<!-- Minimalist Intro -->
+<section class="intro-section">
+  <div class="intro-header">
+    <div class="intro-text">
+      <h1 class="intro-title">Huy Man <span class="alias-tag">@huymanmt</span></h1>
+      <p class="intro-role">DevOps &amp; Cloud Platform Engineer · Ho Chi Minh City</p>
     </div>
-    <div class="hero-avatar-box">
-      <img src="{{ SITEURL }}/{{ AVATAR }}" alt="{{ AUTHOR }}" class="hero-avatar" width="180" height="180">
+    <div class="intro-avatar">
+      <img src="{{ SITEURL }}/{{ AVATAR }}" alt="huymanmt" width="72" height="72">
     </div>
+  </div>
+
+  <p class="intro-bio">
+    DevOps Engineer with 3+ years of experience in automating infrastructure, optimizing CI/CD pipelines,
+    and managing high-availability Kubernetes clusters and enterprise AI workflows.
+  </p>
+
+  <div class="intro-links">
+    <a href="{{ SITEURL }}/about.html" class="link-item">&rarr; About Me</a>
+    <a href="{{ SITEURL }}/resume.pdf" class="link-item" target="_blank" rel="noopener">&darr; Resume (PDF)</a>
+    <a href="https://github.com/huymanmt" class="link-item" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/mannguyen99" class="link-item" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </section>
 
 <!-- Certifications Bar -->
-<section class="certifications-section">
-  <h2 class="section-badge-title">Industry Certifications</h2>
-  <div class="cert-chips-grid">
+<section class="cert-bar-section">
+  <h2 class="sub-heading">Certifications</h2>
+  <div class="cert-pills">
     {% for cert in CERTIFICATIONS %}
-    <div class="cert-chip">
-      <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <span>{{ cert }}</span>
-    </div>
+    <span class="cert-pill">{{ cert }}</span>
     {% endfor %}
   </div>
 </section>
 
-<!-- Latest Articles Section -->
-<section class="articles-section">
-  <div class="section-header">
-    <h2 class="section-title">Latest Technical Articles</h2>
-    <a href="{{ SITEURL }}/archives.html" class="link-more">All Articles &rarr;</a>
+<!-- Recent Posts List -->
+<section class="posts-section">
+  <div class="posts-header">
+    <h2 class="sub-heading">Writing</h2>
+    <a href="{{ SITEURL }}/archives.html" class="all-link">All posts &rarr;</a>
   </div>
 
-  <div class="articles-grid">
+  <ul class="post-list">
     {% for article in articles_page.object_list %}
-    <article class="article-card">
-      <div class="article-card-header">
-        <span class="article-category">{{ article.category }}</span>
-        <time class="article-date" datetime="{{ article.date.isoformat() }}">
-          {{ article.locale_date }}
-        </time>
-      </div>
-
-      <h3 class="article-card-title">
-        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-      </h3>
-
-      <div class="article-card-summary">
-        {% if article.summary %}
-          {{ article.summary }}
-        {% else %}
-          {{ article.content|striptags|truncate(140) }}
-        {% endif %}
-      </div>
-
-      {% if article.tags %}
-      <div class="article-tags">
-        {% for tag in article.tags %}
-        <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-chip">#{{ tag.name }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
-
-      <div class="article-card-footer">
-        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more-link">
-          Read Article &rarr;
-        </a>
-      </div>
-    </article>
+    <li class="post-item">
+      <time class="post-date" datetime="{{ article.date.isoformat() }}">
+        {{ article.date.strftime('%b %d, %Y') }}
+      </time>
+      <a href="{{ SITEURL }}/{{ article.url }}" class="post-title">
+        {{ article.title }}
+      </a>
+    </li>
     {% else %}
-    <p class="no-content">No articles published yet.</p>
+    <li class="post-empty">No articles published yet.</li>
     {% endfor %}
-  </div>
-
-  {% if articles_page and articles_page.paginator.num_pages > 1 %}
-  <div class="pagination">
-    {% if articles_page.has_previous() %}
-    <a href="{{ SITEURL }}/{{ articles_page.previous_page_url() }}" class="btn btn-secondary">&larr; Newer Posts</a>
-    {% endif %}
-    <span class="pagination-info">Page {{ articles_page.number }} of {{ articles_page.paginator.num_pages }}</span>
-    {% if articles_page.has_next() %}
-    <a href="{{ SITEURL }}/{{ articles_page.next_page_url() }}" class="btn btn-secondary">Older Posts &rarr;</a>
-    {% endif %}
-  </div>
-  {% endif %}
+  </ul>
 </section>
 {% endblock %}

@@ -6,32 +6,16 @@
   <title>{% block title %}{{ SITETITLE }}{% endblock %}</title>
   
   <meta name="description" content="{% block description %}{{ BIO }}{% endblock %}">
-  <meta name="author" content="{{ AUTHOR }}">
+  <meta name="author" content="Nguyen Huynh Huy Man (@huymanmt)">
   
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="{% block og_title %}{{ SITETITLE }}{% endblock %}">
-  <meta property="og:description" content="{% block og_description %}{{ BIO }}{% endblock %}">
-  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-  <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}">
-  {% if og_image %}
-  <meta property="og:image" content="{{ SITEURL }}/{{ og_image }}">
-  {% else %}
-  <meta property="og:image" content="{{ SITEURL }}/images/avatar.svg">
-  {% endif %}
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/favicon.svg">
-
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css">
   
-  <!-- RSS / Atom Feeds -->
   {% if FEED_ALL_ATOM %}
-  <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed">
+  <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Feed">
   {% endif %}
 
-  <!-- Prevent theme flicker -->
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');
@@ -45,64 +29,48 @@
   </script>
 </head>
 <body>
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="container header-container">
-      <a href="{{ SITEURL }}/" class="brand-logo">
-        <span class="logo-mark">&gt;_</span>
-        <span class="brand-text">{{ SITENAME }}</span>
-      </a>
-
-      <nav class="site-nav" id="site-nav">
-        <ul class="nav-links">
-          {% for item in NAV_ITEMS %}
-          <li><a href="{{ SITEURL }}{{ item.url }}" class="nav-link">{{ item.title }}</a></li>
-          {% endfor %}
-          <li>
-            <a href="{{ SITEURL }}/resume.pdf" class="btn btn-outline-nav" target="_blank" rel="noopener">Resume PDF</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" class="icon-button" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
-          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-
-        <!-- Mobile Navigation Menu Toggle -->
-        <button id="menu-toggle" class="icon-button menu-toggle" aria-label="Open Navigation Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content Area -->
-  <main class="site-main">
-    <div class="container">
-      {% block content %}{% endblock %}
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <p class="copyright">&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}. Built with <a href="https://getpelican.com" target="_blank" rel="noopener">Pelican</a> &amp; reStructuredText. Deployed to <strong>Firebase</strong> via <strong>GitHub Actions</strong>.</p>
-      </div>
-      <div class="footer-socials">
-        {% for social in SOCIAL_LINKS %}
-        <a href="{{ social.url }}" class="social-link" target="_blank" rel="noopener" aria-label="{{ social.name }}">
-          {{ social.name }}
+  <div class="site-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="{{ SITEURL }}/" class="brand">
+          <span class="brand-name">huymanmt</span>
         </a>
-        {% endfor %}
-      </div>
-    </div>
-  </footer>
 
-  <!-- Scripts -->
+        <nav class="nav">
+          {% for item in NAV_ITEMS %}
+          <a href="{{ SITEURL }}{{ item.url }}" class="nav-item" {% if item.external %}target="_blank" rel="noopener"{% endif %}>
+            {{ item.title }}
+          </a>
+          {% endfor %}
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle theme">
+            <span class="icon-sun">☼</span>
+            <span class="icon-moon">☽</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span>&copy; {{ CURRENT_YEAR }} Huy Man (<strong>@huymanmt</strong>)</span>
+        </div>
+        <div class="footer-links">
+          {% for social in SOCIAL_LINKS %}
+          <a href="{{ social.url }}" target="_blank" rel="noopener">{{ social.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </footer>
+  </div>
+
   <script src="{{ SITEURL }}/theme/js/main.js"></script>
 </body>
 </html>
