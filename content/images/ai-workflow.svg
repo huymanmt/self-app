@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="auto">
+  <defs>
+    <linearGradient id="aiBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="aiFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Step 1: Client / Agent -->
+  <rect x="30" y="50" width="200" height="130" rx="12" fill="url(#aiBgGrad)" stroke="#ec4899" stroke-width="2"/>
+  <text x="130" y="105" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle">HITL Workflow</text>
+  <text x="130" y="135" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">GitHub Actions + Issues</text>
+
+  <!-- Flow 1 -> 2 -->
+  <line x1="240" y1="115" x2="300" y2="115" stroke="url(#aiFlowGrad)" stroke-width="3" stroke-dasharray="6,4"/>
+
+  <!-- Step 2: Gateway & Auth -->
+  <rect x="310" y="50" width="200" height="130" rx="12" fill="url(#aiBgGrad)" stroke="#a855f7" stroke-width="2"/>
+  <text x="410" y="95" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle">LiteLLM Gateway</text>
+  <text x="410" y="125" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">OpenShift High Availability</text>
+  <text x="410" y="145" fill="#e2e8f0" font-family="sans-serif" font-size="11" text-anchor="middle">OpenBao Key Vault</text>
+
+  <!-- Flow 2 -> 3 -->
+  <line x1="520" y1="115" x2="580" y2="115" stroke="url(#aiFlowGrad)" stroke-width="3" stroke-dasharray="6,4"/>
+
+  <!-- Step 3: Observability & Foundry -->
+  <rect x="590" y="50" width="180" height="130" rx="12" fill="url(#aiBgGrad)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="680" y="95" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle">Langfuse &amp; Foundry</text>
+  <text x="680" y="125" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">Azure AI Model Router</text>
+  <text x="680" y="145" fill="#e2e8f0" font-family="sans-serif" font-size="11" text-anchor="middle">Traces &amp; Evaluation</text>
+</svg>

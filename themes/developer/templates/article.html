@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ article.summary|striptags }}{% endblock %}
+{% block og_title %}{{ article.title }}{% endblock %}
+{% block og_description %}{{ article.summary|striptags }}{% endblock %}
+{% block og_type %}article{% endblock %}
+
+{% block content %}
+<article class="single-article">
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-meta-top">
+      <a href="{{ SITEURL }}/{{ article.category.url }}" class="article-category">{{ article.category }}</a>
+      <span class="meta-separator">&bull;</span>
+      <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+      {% if article.modified %}
+      <span class="meta-separator">&bull;</span>
+      <span class="meta-modified">Updated: {{ article.locale_modified }}</span>
+      {% endif %}
+    </div>
+
+    <h1 class="article-main-title">{{ article.title }}</h1>
+
+    <div class="article-author-byline">
+      <span>By <strong>{{ article.author }}</strong></span>
+    </div>
+
+    {% if article.tags %}
+    <div class="article-tags">
+      {% for tag in article.tags %}
+      <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-chip">#{{ tag.name }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Article Body (Rendered from .rst) -->
+  <div class="article-content rst-content">
+    {{ article.content }}
+  </div>
+
+  <!-- Author Bio Card -->
+  <div class="author-bio-card">
+    <img src="{{ SITEURL }}/{{ AVATAR }}" alt="{{ AUTHOR }}" class="bio-avatar" width="70" height="70">
+    <div class="bio-info">
+      <h4>About {{ AUTHOR }}</h4>
+      <p>{{ BIO }}</p>
+      <div class="bio-links">
+        <a href="{{ SITEURL }}/about.html" class="link-highlight">Full Profile &amp; Experience &rarr;</a>
+        <a href="{{ SITEURL }}/resume.pdf" class="link-highlight" target="_blank" rel="noopener">Download PDF Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation / Footer -->
+  <div class="article-footer-nav">
+    <a href="{{ SITEURL }}/archives.html" class="btn btn-secondary">&larr; Back to All Articles</a>
+  </div>
+</article>
+{% endblock %}

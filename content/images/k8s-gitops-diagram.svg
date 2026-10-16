@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="auto">
+  <defs>
+    <linearGradient id="boxGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Step 1: Git Push -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="50" width="180" height="130" rx="12" fill="url(#boxGrad1)" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="120" cy="85" r="18" fill="#0284c7"/>
+    <text x="120" y="90" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">GIT</text>
+    <text x="120" y="130" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">1. Git Repository</text>
+    <text x="120" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">PR &amp; Commit Trigger</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M220 115 L280 115" stroke="url(#accentGrad)" stroke-width="3" stroke-dasharray="6,4"/>
+  <polygon points="280,110 290,115 280,120" fill="#818cf8"/>
+
+  <!-- Step 2: GitHub ARC & CI -->
+  <g filter="url(#shadow)">
+    <rect x="300" y="50" width="200" height="130" rx="12" fill="url(#boxGrad1)" stroke="#818cf8" stroke-width="2"/>
+    <circle cx="400" cy="85" r="18" fill="#6366f1"/>
+    <text x="400" y="90" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">ARC</text>
+    <text x="400" y="130" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">2. GitHub ARC CI</text>
+    <text x="400" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">Ephemeral Runner Pods</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M510 115 L570 115" stroke="url(#accentGrad)" stroke-width="3" stroke-dasharray="6,4"/>
+  <polygon points="570,110 580,115 570,120" fill="#818cf8"/>
+
+  <!-- Step 3: ArgoCD & K8s Cluster -->
+  <g filter="url(#shadow)">
+    <rect x="590" y="50" width="180" height="130" rx="12" fill="url(#boxGrad1)" stroke="#10b981" stroke-width="2"/>
+    <circle cx="680" cy="85" r="18" fill="#059669"/>
+    <text x="680" y="90" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">K8S</text>
+    <text x="680" y="130" fill="#f8fafc" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">3. ArgoCD GitOps</text>
+    <text x="680" y="152" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">Production Auto-Sync</text>
+  </g>
+</svg>

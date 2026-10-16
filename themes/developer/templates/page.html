@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
+{% block description %}{{ page.summary|striptags if page.summary else BIO }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.summary|striptags if page.summary else BIO }}{% endblock %}
+
+{% block content %}
+<article class="static-page">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.slug == 'about' %}
+    <div class="page-action-banner">
+      <span>Looking for the official curriculum vitae?</span>
+      <a href="{{ SITEURL }}/resume.pdf" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume (PDF)
+      </a>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="page-content rst-content">
+    {{ page.content }}
+  </div>
+</article>
+{% endblock %}

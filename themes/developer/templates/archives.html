@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}All Articles | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section class="archives-section">
+  <div class="section-header">
+    <h1 class="section-title">Technical Blog Archives</h1>
+    <p class="section-subtitle">Articles on DevOps, Kubernetes, Cloud Architecture, and AI Engineering.</p>
+  </div>
+
+  <div class="timeline-container">
+    {% for article in dates %}
+    <div class="timeline-item">
+      <time class="timeline-date" datetime="{{ article.date.isoformat() }}">
+        {{ article.date.strftime('%b %d, %Y') }}
+      </time>
+      <div class="timeline-content">
+        <span class="timeline-category">{{ article.category }}</span>
+        <h3 class="timeline-title">
+          <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        </h3>
+        {% if article.tags %}
+        <div class="timeline-tags">
+          {% for tag in article.tags %}
+          <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-chip">#{{ tag.name }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

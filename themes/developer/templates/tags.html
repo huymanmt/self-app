@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}All Topics &amp; Tags | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section class="tags-section">
+  <div class="section-header">
+    <h1 class="section-title">Topics &amp; Tags</h1>
+    <p class="section-subtitle">Browse articles categorized by technology and domain.</p>
+  </div>
+
+  <div class="tags-cloud">
+    {% for tag, articles in tags|sort %}
+    <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-cloud-chip">
+      <span class="tag-name">#{{ tag.name }}</span>
+      <span class="tag-count">{{ articles|length }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
