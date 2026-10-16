@@ -5,7 +5,6 @@ import contentData from '../data/content.json';
 export default function About() {
   const contentRef = useRef(null);
   const about = contentData.about || {};
-  const posts = contentData.posts || [];
 
   useEffect(() => {
     if (!contentRef.current) return;
@@ -31,54 +30,47 @@ export default function About() {
   }, [about]);
 
   return (
-    <article className="page-container">
-      {/* Header Profile Title */}
-      <header className="hero-section" style={{ marginBottom: '1.5rem' }}>
-        <div className="hero-main">
-          <div className="hero-text">
-            <h1 className="hero-title" style={{ marginBottom: '0.25rem' }}>
-              Nguyen Huynh Huy Man
-            </h1>
-            <p className="hero-subtitle">
-              DevOps &amp; Cloud Platform Engineer · Ho Chi Minh City
-            </p>
-          </div>
+    <article className="post-single">
+      <header className="post-header">
+        <h1 className="post-title">About me</h1>
+        <div className="post-meta">
+          <span>Nguyen Huynh Huy Man</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>DevOps &amp; Cloud Platform Engineer</span>
+          <span>&nbsp;·&nbsp;</span>
+          <span>Ho Chi Minh City</span>
         </div>
       </header>
 
-      {/* Compiled RST Content (About me, Certs, Experience, Skills, Awards, Education) */}
+      {/* Intro & Contact Block */}
+      <div style={{ marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid var(--border)' }}>
+        <p style={{ marginBottom: '14px', lineHeight: '1.75' }}>
+          I'm a DevOps &amp; Cloud Platform Engineer based in Ho Chi Minh City, Viet Nam.
+          With 3+ years of engineering experience, I specialize in automating cloud infrastructure,
+          orchestrating multi-tenant Kubernetes clusters, designing GitOps pipelines with Argo CD and GitHub ARC,
+          and deploying enterprise AI infrastructure (LiteLLM, Langfuse, OpenBao).
+        </p>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '14.5px', color: 'var(--secondary)' }}>
+          <span>📍 Ho Chi Minh City, Viet Nam</span>
+          <a href="https://github.com/huymanmt" target="_blank" rel="noopener noreferrer">
+            🐙 GitHub: github.com/huymanmt
+          </a>
+          <a href="https://linkedin.com/in/mannguyen99" target="_blank" rel="noopener noreferrer">
+            💼 LinkedIn: linkedin.com/in/mannguyen99
+          </a>
+          <a href="mailto:man28081999@gmail.com">
+            ✉️ Email: man28081999@gmail.com
+          </a>
+        </div>
+      </div>
+
+      {/* Full Profile Content (Certifications, Experience, Skills, Awards, Education) */}
       <div
         ref={contentRef}
-        className="rst-body"
+        className="post-content rst-body"
         dangerouslySetInnerHTML={{ __html: about.contentHtml || '<p>Loading profile...</p>' }}
       />
-
-      {/* Recent Writing Section at the bottom */}
-      <section className="posts-section" style={{ marginTop: '3.5rem' }}>
-        <div className="section-header-row">
-          <h2 className="section-label">Recent Writing</h2>
-          <Link to="/blog" className="view-all-link">
-            All posts &rarr;
-          </Link>
-        </div>
-
-        <ul className="post-items-list">
-          {posts.slice(0, 3).map((post) => (
-            <li key={post.slug} className="post-row">
-              <time className="post-row-date">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </time>
-              <Link to={`/blog/${post.slug}`} className="post-row-title">
-                {post.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
     </article>
   );
 }
