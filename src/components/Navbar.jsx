@@ -38,21 +38,7 @@ export default function Navbar() {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <Link to="/" title="huymanmt" className="logo-brand">
-            <span className="logo-gif-box">
-              <img
-                src="/light-mode.gif"
-                alt="huymanmt light avatar"
-                className="logo-gif gif-light"
-              />
-              <img
-                src="/dark-mode.gif"
-                alt="huymanmt dark avatar"
-                className="logo-gif gif-dark"
-              />
-            </span>
-            <span className="logo-text">huymanmt</span>
-          </Link>
+          <Link to="/" title="huymanmt">huymanmt</Link>
           <span className="logo-switches">
             <button
               id="theme-toggle"
