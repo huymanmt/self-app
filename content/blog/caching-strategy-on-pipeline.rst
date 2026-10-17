@@ -297,8 +297,6 @@ When you need to clean the cache due to a security patch, a Node.js upgrade, or 
 3. Clean Baseline Rebuilt:  
    The pipeline performs a clean install, fetches patched dependencies from the registry, and saves a brand-new, secure cache baseline under the ``v2`` prefix.
 
-This gives your team an instant, declarative "kill switch" to invalidate the entire cache history without needing administrative access or manual cache purging in the Azure DevOps portal.
-
 Conclusion
 ==========
 
